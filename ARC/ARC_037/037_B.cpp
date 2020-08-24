@@ -3,45 +3,44 @@
 using namespace std;
 using ll = long long;
 using p = pair<int,int>;
-vector<bool> seen;
+bool seen[105];
 bool flag=true;
-void dfs(const vector<vector<int>> &G,int v){
+vector<vector<int>> G;
+void dfs(int v,int prev){
     seen[v]=true;
 
-    for(auto next_v: G[v]){
+    for(int next_v:G[v]){
+        if(next_v==prev)continue;
         if(seen[next_v]){
             flag=false;
             break;
         }
-        dfs(G,next_v);
+        dfs(next_v,v);
     }
 }
 int main(int argc, const char * argv[]) {
-
-
 
     cin.tie(0);
     ios::sync_with_stdio(false);
 
     int n,m;
     cin>>n>>m;
-    vector<vector<int>> G;
+    G.resize(n);
     int u,v;
     rep(i,m){
         cin>>u>>v;
-        G[u-1].push_back(v-1);
-        G[v-1].push_back(u-1);
+        u--;v--;
+        G[u].push_back(v);
+        G[v].push_back(u);
     }
     int cnt=0;
     rep(i,n){
         if(seen[i])continue;
         flag=true;
-        dfs(G,i);
+        dfs(i,-1);
         if(flag)cnt++;
     }
     cout<<cnt<<endl;
-
-
 
     return 0;
 }
