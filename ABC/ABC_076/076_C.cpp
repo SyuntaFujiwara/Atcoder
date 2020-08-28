@@ -12,41 +12,29 @@ int main(int argc, const char * argv[]) {
     string s,t;
     cin>>s>>t;
     int start;
-    bool flag=true,flag_2;
-    int s_size=int(s.size()),t_size=int(t.size());
 
-    rep(i,s_size){
-        rep(j,s_size-t_size){
-            int k=1;
-            if(s[i]==t[j]){
-                while(k<t_size){
-                    if(s[i+k]==t[j+k]||s[i+k]=='?'){
-                        k++;
-                    }
-                    else{
-                        flag=false;
-                        break;
-                    }
-                }
-                if(flag){
-                    start=i;
-                    flag_2=true;
-                }
+    for(int i=s.size()-1;i>=0;i--){
+        string u=s.substr(i,t.size());
+        if(t.size()!=u.size())continue;
+        bool flag=true;
+        for(int j=0;j<t.size();j++){
+            if(t[j]!=u[j]&&u[j]!='?'){
+                flag=false;
+                break;
             }
         }
-    }
-    //出力文字列の作成
-    rep(i,t_size){
-        if(s[i+start]=='?')
-            s[i+start]=t[i];
-    }
-    rep(i,s_size){
-        if(s[i]=='?'){
-            s[i]='a';
+        if(flag){
+            for(int j=0;j<u.size();i++,j++){
+                s[i]=t[j];
+            }
+            rep(j,s.size()){
+                if(s[j]=='?')s[j]='a';
+            }
+            cout<<s<<endl;
+            return 0;
         }
     }
-    if(flag_2)cout<<s<<endl;
-    else cout<<"UNRESTORABLE"<<endl;
+    cout<<"UNRESTORABLE"<<endl;
 
 
     return 0;
