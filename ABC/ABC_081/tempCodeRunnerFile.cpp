@@ -8,11 +8,10 @@ int main(int argc, const char * argv[]) {
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    char s;
+    char s[3];
     int cnt=0;
     rep(i,3){
-        cin>>s;
-        if(s=='1')cnt++;
+        if(s[i]=='1')cnt++;
     }
     cout<<cnt<<endl;
 
