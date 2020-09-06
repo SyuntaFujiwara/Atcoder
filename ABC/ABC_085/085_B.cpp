@@ -8,7 +8,15 @@ int main(int argc, const char * argv[]) {
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    
+    int n;
+    cin>>n;
+    set<int>d;
+    int D;
+    rep(i,n){
+        cin>>D;
+        d.insert(D);
+    }
+    cout<<d.size()<<endl;
 
     return 0;
 }
