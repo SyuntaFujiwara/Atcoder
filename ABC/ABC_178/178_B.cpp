@@ -8,7 +8,14 @@ int main(int argc, const char * argv[]) {
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    
+    ll a,b,c,d;
+    cin>>a>>b>>c>>d;
+    ll ans=-1000000000000000009;
+    ans=max(ans,b*c);
+    ans=max(ans,a*c);
+    ans=max(ans,a*d);
+    ans=max(ans,b*d);
+    cout<<ans<<endl;
 
     return 0;
 }

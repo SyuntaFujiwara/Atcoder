@@ -8,7 +8,10 @@ int main(int argc, const char * argv[]) {
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    
+    int x;
+    cin>>x;
+    if(x==0)cout<<1<<endl;
+    else cout<<0<<endl;
 
     return 0;
 }
