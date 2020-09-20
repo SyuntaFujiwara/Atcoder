@@ -8,20 +8,10 @@ int main(int argc, const char * argv[]) {
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    int n;
-    cin>>n;
-    int p[n];
-    rep(i,n){
-        cin>>p[i];
-    }
-    int cnt=0;
-    rep(i,n){
-        if(p[i]!=i+1){
-            cnt++;
-        }
-    }
-    if(cnt==2||cnt==0)cout<<"Yes"<<endl;
-    else cout<<"No"<<endl;
+    string s;
+    cin>>s;
+    if(s[s.size()-1]=='s')cout<<s<<"es"<<endl;
+    else cout<<s<<"s"<<endl;
 
     return 0;
 }

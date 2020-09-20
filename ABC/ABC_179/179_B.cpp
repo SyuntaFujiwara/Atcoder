@@ -10,18 +10,23 @@ int main(int argc, const char * argv[]) {
 
     int n;
     cin>>n;
-    int p[n];
-    rep(i,n){
-        cin>>p[i];
-    }
+    p d;
     int cnt=0;
     rep(i,n){
-        if(p[i]!=i+1){
+        cin>>d.first>>d.second;
+        if(d.first==d.second){
             cnt++;
+            if(cnt==3){
+                cout<<"Yes"<<endl;
+                return 0;
+            }
+        }
+        else{
+            cnt=0;
         }
     }
-    if(cnt==2||cnt==0)cout<<"Yes"<<endl;
-    else cout<<"No"<<endl;
+    cout<<"No"<<endl;
+    
 
     return 0;
 }

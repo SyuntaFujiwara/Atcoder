@@ -10,18 +10,17 @@ int main(int argc, const char * argv[]) {
 
     int n;
     cin>>n;
-    int p[n];
-    rep(i,n){
-        cin>>p[i];
-    }
-    int cnt=0;
-    rep(i,n){
-        if(p[i]!=i+1){
-            cnt++;
+    int ans=0;
+    for(int a=1;a<=n;a++){
+        for(int b=1;b<=a;b++){
+            if(a*b<n){
+                if(a==b)ans++;
+                else ans+=2;
+            }
+            else break;
         }
     }
-    if(cnt==2||cnt==0)cout<<"Yes"<<endl;
-    else cout<<"No"<<endl;
+    cout<<ans<<endl;
 
     return 0;
 }
