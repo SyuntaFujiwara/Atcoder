@@ -8,7 +8,12 @@ int main(int argc, const char * argv[]) {
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    
+    int d,n;
+    cin>>d>>n;
+    ll ans=pow(100,d);
+    ans=ans*n;
+    if(n==100)ans+=1;
+    cout<<ans<<endl;
 
     return 0;
 }
