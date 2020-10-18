@@ -5,7 +5,8 @@
         "chrono": "cpp",
         "cmath": "cpp",
         "*.tcc": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "iomanip": "cpp"
     },
     "vim.insertModeKeyBindings": [
         {
