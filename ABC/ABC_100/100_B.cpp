@@ -10,10 +10,10 @@ int main(int argc, const char * argv[]) {
 
     int d,n;
     cin>>d>>n;
-    ll ans=pow(100,d);
-    ans=ans*n;
-    if(n==100)ans+=1;
-    cout<<ans<<endl;
+    int ans=pow(100,d);
+    if(n==100)n++;
+    if(ans==0)cout<<n<<endl;
+    else cout<<ans*n<<endl;
 
     return 0;
 }
