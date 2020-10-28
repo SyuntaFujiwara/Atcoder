@@ -15,5 +15,7 @@
         }
     ], 
 
-    "vim.hlsearch": true
+    "vim.hlsearch": true,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16
 }
