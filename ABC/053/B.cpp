@@ -9,13 +9,23 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    int n,m;
-    cin>>n>>m;
-    vector<int>h(n);
-    vector<int>w(m);
-    rep(i,n)cin>>h[i];
-    rep(i,m)cin>>w[i];
-    
+    string s;
+    cin>>s;
+    int a;
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='A'){
+            a=i;
+            break;
+        }
+    }
+    int z;
+    for(int i=s.size()-1;i>=0;i--){
+        if(s[i]=='Z'){
+            z=i;
+            break;
+        }
+    }
+    cout<<z-a+1<<endl;
 
     return 0;
 }

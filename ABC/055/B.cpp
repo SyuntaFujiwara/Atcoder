@@ -9,13 +9,13 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    int n,m;
-    cin>>n>>m;
-    vector<int>h(n);
-    vector<int>w(m);
-    rep(i,n)cin>>h[i];
-    rep(i,m)cin>>w[i];
-    
+    int n;
+    cin>>n;
+    ll ans=1;
+    for(int i=1;i<=n;i++){
+        ans=(ans*i)%1000000007;
+    }
+    std::cout<<ans<<endl;
 
     return 0;
 }
