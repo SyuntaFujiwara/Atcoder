@@ -9,21 +9,29 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    vector<vector<char>>c(4,vector<char>(4));
-    rep(i,4){
-        rep(j,4){
-            cin>>c[i][j];
+    int n,w;
+    cin>>n>>w;
+    int max_t=-1;
+    vector<int>s(n);
+    vector<int>t(n);
+    vector<int>p(n);
+    rep(i,n){
+        cin>>s[i]>>t[i]>>p[i];
+        chmax(max_t,t[i]);
+    }
+    vector<int>sum(max_t+5,0);
+    rep(i,n){
+        for(int j=s[i];j<t[i];j++){
+            sum[j]+=p[i];
         }
     }
-    for(int i=3;i>=0;i--){
-        for(int j=3;j>=0;j--){
-            cout<<c[i][j];
-            if(j==0){
-                cout<<endl;
-            }
-            else cout<<" ";
+    for(int i=0;i<max_t;i++){
+        if(w<sum[i]){
+            cout<<"No"<<endl;
+            return 0;
         }
     }
+    cout<<"Yes"<<endl;
 
     return 0;
 }
