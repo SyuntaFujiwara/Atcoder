@@ -8,26 +8,16 @@ template<class T>bool chmax(T &a, const T &b) { if (a<b) { a=b; return 1; } retu
 template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } return 0; }
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
-    
-    int n,w;
-    cin>>n>>w;
-    vector<p>x;
-    int s,t,p;
-    rep(i,n){
-        cin>>s>>t>>p;
-        x.push_back(make_pair(s,p));
-        x.push_back(make_pair(t,-p));
-    }
-    ll sum=0;
-    sort(x.begin(),x.end());
-    for(int i=0;i<x.size();i++){
-        sum+=x[i].second;
-        if(sum>w){
-            cout<<"No"<<endl;
-            return 0;
+
+    string o,e;
+    cin>>o>>e;
+    for(int i=0;i<o.size();i++){
+        cout<<o[i];
+        if(i!=e.size()){
+            cout<<e[i];
         }
     }
-    cout<<"Yes"<<endl;
+    cout<<endl;
 
     return 0;
 }
