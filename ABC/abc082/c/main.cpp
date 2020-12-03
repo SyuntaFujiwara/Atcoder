@@ -9,9 +9,20 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    ll a,b,n;
-    cin>>a>>b>>n;
-    cout<<min(floor((a*n)/b)-a*floor(n/b),floor((a*(b-1))/b)-a*floor((b-1)/b))<<endl;
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    rep(i,n)cin>>a[i];
+    map<int,int>m;
+    rep(i,n){
+        m[a[i]]++;
+    }
+    int ans=0;
+    for(const auto& [key,value]:m){
+        if(value>key)ans+=(value-key);
+        else if(value<key)ans+=value;
+    }
+    cout<<ans<<endl;
 
     return 0;
 }

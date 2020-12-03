@@ -9,9 +9,19 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    ll a,b,n;
-    cin>>a>>b>>n;
-    cout<<min(floor((a*n)/b)-a*floor(n/b),floor((a*(b-1))/b)-a*floor((b-1)/b))<<endl;
+    int l,r;
+    cin>>l>>r;
+    l=l%2019;
+    if(l-r<2019){
+        r=r%2019;
+    }
+    int ans=2025;
+    for(int i=l;i<=min(r,l+2029);i++){
+        for(int j=i+1;j<=min(r,i+2029);j++){
+            chmin(ans,(i*j)%2019);
+        }
+    }
+    cout<<ans<<endl;
 
     return 0;
 }
