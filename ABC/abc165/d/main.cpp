@@ -11,7 +11,8 @@ int main(int argc, const char * argv[]) {
 
     ll a,b,n;
     cin>>a>>b>>n;
-    cout<<min(floor((a*n)/b)-a*floor(n/b),floor((a*(b-1))/b)-a*floor((b-1)/b))<<endl;
+    ll m=min(n,b-1);
+    cout<<min(floor((a*m)/b)-a*floor(m/b),floor((a*m)/b)-a*floor(m/b))<<endl;
 
     return 0;
 }

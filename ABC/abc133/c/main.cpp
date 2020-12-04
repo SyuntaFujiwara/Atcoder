@@ -9,16 +9,13 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    int l,r;
+    ll l,r;
     cin>>l>>r;
-    l=l%2019;
-    if(l-r<2019){
-        r=r%2019;
-    }
-    int ans=2025;
-    for(int i=l;i<=min(r,l+2029);i++){
-        for(int j=i+1;j<=min(r,i+2029);j++){
-            chmin(ans,(i*j)%2019);
+    ll ans=2025;
+    for(ll i=l;i<=min(r,l+2020);i++){
+        for(ll j=i+1;j<=min(r,i+2020);j++){
+            ll mod=(i*j)%2019;
+            chmin(ans,mod);
         }
     }
     cout<<ans<<endl;
