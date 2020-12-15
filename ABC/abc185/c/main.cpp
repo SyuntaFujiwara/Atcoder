@@ -47,7 +47,6 @@ int main(int argc, char* argv[])
             for(int j=0;j<x.size();j++){
                 m[x[i]]++;
             }
-
             ans+=nCk(12,m.size()-1);
         }
     }
