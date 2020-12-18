@@ -11,44 +11,22 @@ int main(int argc, const char * argv[]) {
 
     int n,m;
     cin>>n>>m;
-    if(m==0){
-        cout<<1<<endl;
-        return 0;
-    }
     vector<int>a(m);
-    rep(i,m){
-        cin>>a[i];
-        a[i]--;
-    }
-    int min_a=1e9;
-    int prev=-1;
-    vector<int>b;
+    rep(i,m)cin>>a[i];
     sort(a.begin(),a.end());
-    for(int i=0;i<a.size();i++){
-        cout<<a[i]<<" ";
-    }
-    cout<<endl;
-    rep(i,m){
-        if(a[i]-prev-1>0){
-            b.push_back(a[i]-prev-1);
-            chmin(min_a,a[i]-prev-1);
-            prev=a[i];
+    a.insert(a.begin(),0);
+    a.push_back(n+1);
+    vector<int>v;
+    int k=n;
+    for(int i=1;i<m+2;i++){
+        if(a[i]-a[i-1]-1>0){
+            v.push_back(a[i]-a[i-1]-1);
+            chmin(k,a[i]-a[i-1]-1);
         }
     }
-    if(n-prev-1>0){
-        chmin(min_a,n-prev-1);
-        b.push_back(n-prev-1);
-    }
-    for(int i=0;i<b.size();i++){
-        cout<<b[i]<<" ";
-    }
-    int ans=0;
-    for(int i=0;i<b.size();i++){
-        int plus=b[i]/min_a;
-        if(b[i]%min_a!=0){
-            plus++;
-        }
-        ans+=plus;
+    ll ans=0;
+    for(int i=0;i<v.size();i++){
+        ans+=((v[i]+k-1)/k);
     }
     cout<<ans<<endl;
 
