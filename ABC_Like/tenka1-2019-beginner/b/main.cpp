@@ -9,7 +9,16 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
 
-    
+    int n;
+    cin>>n;
+    string s;
+    int k;
+    cin>>s>>k;
+    char x=s[k-1];
+    rep(i,n){
+        if(s[i]!=x)s[i]='*';
+    }
+    cout<<s<<endl;
 
     return 0;
 }
