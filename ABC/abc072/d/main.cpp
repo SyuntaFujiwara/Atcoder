@@ -18,24 +18,24 @@ template <class T> bool chmin(T &a, const T &b) {
   }
   return 0;
 }
-long long gcd(long long a, long long b) {
-  if (a % b == 0) {
-    return (b);
-  } else {
-    return (gcd(b, a % b));
-  }
-}
-long long lcm(long long a, long long b) { return a * b / gcd(a, b); }
 int main(int argc, const char *argv[]) {
   ios::sync_with_stdio(false);
 
   int n;
   cin >> n;
-  vector<ll> a(n);
-  rep(i, n) cin >> a[i];
-  ll ans = gcd(a[0], a[1]);
-  for (int i = 2; i < n; i++) {
-    ans = gcd(ans, a[i]);
+  vector<int> p(n);
+  rep(i, n) {
+    cin >> p[i];
+    p[i]--;
+  }
+  int ans = 0;
+  for (int i = 0; i < n; i++) {
+    if (p[i] == i) {
+        int x = p[i];
+        p[i] = p[i + 1];
+        p[i + 1] = x;
+        ans++;
+    }
   }
   cout << ans << endl;
 
