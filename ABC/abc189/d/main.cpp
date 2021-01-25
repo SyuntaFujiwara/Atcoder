@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
               else
                 flag=flag || false;
             }
-        }
+        } 
         if(flag)ans++; 
     }
     cout<<ans<<endl;
