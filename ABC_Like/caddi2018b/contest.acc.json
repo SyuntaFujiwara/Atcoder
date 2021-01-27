@@ -19,7 +19,11 @@
       "id": "caddi2018b_b",
       "label": "B",
       "title": "AtCoder Alloy",
-      "url": "https://atcoder.jp/contests/caddi2018b/tasks/caddi2018b_b"
+      "url": "https://atcoder.jp/contests/caddi2018b/tasks/caddi2018b_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests"
+      }
     },
     {
       "id": "caddi2018_a",
