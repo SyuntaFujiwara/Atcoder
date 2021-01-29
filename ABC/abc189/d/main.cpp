@@ -13,25 +13,12 @@ int main(int argc, const char * argv[]) {
     cin>>n;
     vector<string>s(n);
     rep(i,n)cin>>s[i];
-    int ans=0;
-    for(int bit=0;bit<(1<<n+1);bit++){
-        bool flag;
-        if(bit&1)flag=true;
-        else flag=false;
-        for(int i=1;i<n+1;i++){
-            if(bit&(1<<i)){
-                if(s[i-1]=="AND")flag=flag&&true;
-                else flag=flag||true;
-            } else {
-              if (s[i-1] == "AND")
-                flag=flag && false;
-              else
-                flag=flag || false;
-            }
-        } 
-        if(flag)ans++; 
+    ll t=1,f=1;
+    rep(i, n) {
+      if (s[i] == "OR")f=f*2+t;
+      else t=t*2+f;
     }
-    cout<<ans<<endl;
+    cout<<f<<endl;
 
     return 0;
 }
