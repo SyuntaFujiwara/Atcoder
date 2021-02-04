@@ -11,15 +11,15 @@ int main(int argc, const char * argv[]) {
 
     string s;
     cin>>s;
-    int ans=1;
-    string n;
-    for(int i=0;i<s.size()-1;i++){
-        n.push_back(s[i]);
-        string m;
-        m.push_back(s[i+1]);
-        if(n!=m){
+    int ans=0;
+    string prv="";
+    string cur="";
+    for(int i=0;i<s.size();i++){
+        cur+=s[i];
+        if(prv!=cur){
             ans++;
-            n="";
+            prv=cur;
+            cur="";
         }
 
     }
