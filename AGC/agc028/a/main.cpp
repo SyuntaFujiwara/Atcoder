@@ -40,6 +40,7 @@ int main(int argc, const char * argv[]) {
                 cout<<l<<endl;
                 return 0;
             }
+
         }
     }
     cout<<-1<<endl;
