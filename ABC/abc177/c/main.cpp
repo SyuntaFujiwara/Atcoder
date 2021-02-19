@@ -11,14 +11,21 @@ int main(int argc, const char * argv[]) {
 
     int n;
     cin>>n;
-    ll a[n];
-    rep(i,n){
-        cin>>a[i];
-    }
+    vector<ll>a(n);
+    rep(i,n)cin>>a[i];
     ll ans=0;
-    rep(i,n){
-        
+    vector<ll>sum(n+1);
+    sum[0]=0;
+    for(int i=1;i<n+1;i++){
+        sum[i]=a[i-1]+sum[i-1];
+        sum[i]%=MOD;
     }
+    for(int i=0;i<n-1;i++){
+        ans+=a[i]*(sum[n]-sum[i+1]);
+        ans%=MOD;
+    }
+    ans+=MOD;
+    ans%=MOD;
     cout<<ans<<endl;
 
     return 0;
