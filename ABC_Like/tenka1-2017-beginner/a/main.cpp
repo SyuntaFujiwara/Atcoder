@@ -11,19 +11,12 @@ int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
     cout<<fixed<<setprecision(15);
 
-    int n,a,b;
-    cin>>n>>a>>b;
-    vector<int>p(n);
-    rep(i,n)cin>>p[i];
-    int x=0;
-    int y=0;
-    int z=0;
-    rep(i,n){
-        if(p[i]<=a)x++;
-        else if(p[i]<=b)y++;
-        else z++;
+    string s;
+    cin>>s;
+    int ans=0;
+    rep(i,6){
+        if(s[i]=='1')ans++;
     }
-    int ans=min(x,min(y,z));
     cout<<ans<<endl;
 
     return 0;
